@@ -7,14 +7,16 @@ var APP_DIR = path.resolve(__dirname, 'src/js');
 var CSS_DIR = path.resolve(__dirname, 'src/css');
 
 var config = {
+    devtool: 'eval',
     entry: [
-        'webpack-dev-server/client?http://0.0.0.0:3000', // WebpackDevServer host and port
-        'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-        APP_DIR + '/index.js'
+        'webpack-dev-server/client?http://0.0.0.0:3000',
+        'webpack/hot/only-dev-server',
+        './src/js/index.js'
     ],
     output: {
         path: BUILD_DIR,
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/static/'
     },
     module : {
         loaders : [
@@ -22,6 +24,11 @@ var config = {
                 test : /\.js$/,
                 include : APP_DIR + '/',
                 loaders: ['react-hot', 'babel']
+            },
+            {
+                test: /\.css$/,
+                include: CSS_DIR + '/',
+                loader: "style-loader!css-loader"
             }
         ]
     },

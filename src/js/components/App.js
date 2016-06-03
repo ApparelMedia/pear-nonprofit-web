@@ -5,10 +5,11 @@ import CountList from '../containers/CountList'
 
 class App extends Component {
     render () {
+        let title = 'Orgs'
         return (
             <div>
                 <SearchNonprofit />
-                <h1> Organizations </h1>
+                <h1> {title} </h1>
                 <CountList />
                 <VisibleList />
             </div>
