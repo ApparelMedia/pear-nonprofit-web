@@ -4,7 +4,7 @@ var env = require('./.env');
 
 var BUILD_DIR = path.resolve(__dirname, 'build');
 var APP_DIR = path.resolve(__dirname, 'src/js');
-var CSS_DIR = path.resolve(__dirname, 'src/css');
+var CSS_DIR = path.resolve(__dirname, 'src/styles');
 
 var config = {
     devtool: 'eval',
@@ -23,12 +23,27 @@ var config = {
             {
                 test : /\.js$/,
                 include : APP_DIR + '/',
-                loaders: ['react-hot', 'babel']
+                loader: 'react-hot!babel'
             },
             {
                 test: /\.css$/,
                 include: CSS_DIR + '/',
-                loader: "style-loader!css-loader"
+                loader: "style!css?modules"
+            },
+            {
+                test: /\.scss$/,
+                include: CSS_DIR + '/',
+                loader: "style!css?modules!sass"
+            },
+            {
+                test: /\.svg$/,
+                include: CSS_DIR + '/',
+                loader: "file"
+            },
+            {
+                test: /\.jpg$/,
+                include: CSS_DIR + '/',
+                loader: "file"
             }
         ]
     },

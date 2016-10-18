@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react'
+import { Button } from 'belle'
 
 class SearchBox extends Component {
     constructor({submitEvent, onInputChange}) {
@@ -21,7 +22,7 @@ class SearchBox extends Component {
                 } onChange={(e) => {
                     this.onInputChange(e.target.value, this.inputBox)
                 }} />
-                <button type="submit">Search</button>
+                <Button primary type="submit">Search</Button>
             </form>
             </div>
         )

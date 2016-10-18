@@ -5,7 +5,7 @@ class NonprofitList extends Component {
     render () {
         return (
            <ul>
-               {this.props.nonprofits.map(function(org) {
+               {this.props.nonprofits.map((org) => {
                    return <NonprofitItem key={org.id}
                        {...org}
                    />

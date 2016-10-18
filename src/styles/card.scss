@@ -1,0 +1,42 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+$color: #eee;
+
+.text {
+  font-family: "Open Sans", sans-serif;
+}
+
+.card {
+  composes: text;
+  list-style: none;
+  margin: 10px;
+  background-color: $color;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card:hover {
+  background-color: green;
+  color: white;
+  .instruction {
+    color: white;
+  }
+}
+
+.card a {
+  padding: 10px;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+
+}
+
+.instruction {
+  margin: 5px 10px;
+  position: absolute;
+  color: #7f7f7f;
+  font-size: 12px;
+  right: 0;
+  bottom: 0;
+}
